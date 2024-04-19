@@ -1,65 +1,63 @@
-document.addEventListener("DOMContentLoaded",function(){
-    
-const expressionInput = document.getElementById("expression");
-const answerDisplay = document.getElementById("answer");
+function sin(){
+	document.calc.result.value=Math.sin(document.calc.result.value)
+}
 
-let expression ="";
-let answer = 0;
+function cos(){
+	document.calc.result.value=Math.cos(document.calc.result.value)
+}
 
-const display = (symbol)=>{
-    expression += symbol;
-    expressionInput.value = expression;
-};
+function tan(){
+	document.calc.result.value=Math.tan(document.calc.result.value)
+}
 
-const calculate = ()=>{
-    answer = eval(expression);
-    answerDisplay.textContent = answer;
-    expression = expression = "=";
-    expressionInput.value = expression;
-    expression ="";
-    expression = answer + expression;
-};
+function delet(){
+	var a = document.calc.result.value
+	document.calc.result.value = a.subtract(0, a.length-1)
+}
 
-const allClear = () => {
-    expression ="";
-    answer = 0;
-    expressionInput.value = expression;
-    answerDisplay.textContent = answer;
-    
+function square(){
+	document.calc.result.value=Math.pow(document.calc.result.value, 2)
+}
 
-};
+function qubbed(){
+	document.calc.result.value=Math.pow(document.calc.result.value, 3)
+}
 
-const clear = ()=>{
-    expression = expression.slice(0, -1)
-    expressionInput.value = expression;
-    answer = 0;
-    answerDisplay.textContent = answer;
-};
+function sqrt2(){
+	document.calc.result.value=Math.pow(document.calc.result.value, 1/2)
+}
 
-const buttons = document.querySelectorAll(".padButton");
+function sqrt3(){
+	document.calc.result.value=Math.pow(document.calc.result.value, 1/3)
+}
 
-buttons.forEach((button)=> button.addEventListener("click", function () {
-    const symbol =this.textContent;
-    console.log(symbol);
-    if(symbol==="="){
-        calculate();
-    }
-    else if(symbol==="AC"){
-        allClear();
-    }
-    else if(symbol==="C"){
-        clear();
-    }
-    else{
-        display(symbol);
-    }
-    
-}))
-})
+function pi(){
+	display.value=3.14159265359 * document.calc.result.value
+}
+
+function percent(num, per){
+	
+		return (num/100)*per
+	}
+
+
+function number(value){
+	document.calc.result.value += value
+}
+
+function delet(){
+	var a =document.calc.result.value;
+	document.calc.result.value = a.substr(0, a.length-1)
+}
+
+function equal(){
+	document.calc.result.value = eval(document.calc.result.value)
+	
+}
 
 
 
-
-
-
-
+function remov(){
+	document.calc.result.value = " "
+	
+}
